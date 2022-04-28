@@ -72,7 +72,7 @@ I read the proto files for each field in the config file of the model for Tensor
 
 I changed the optimizer for Adam optimizer,
 
-I changed the learing rate for exponential decay learning rate instead of Cosine Decay Learning Rate and set its parameters to fit the learning steps for the whole training process of 2500.
+I changed the learning rate for exponential decay learning rate instead of Cosine Decay Learning Rate and set its parameters to fit the learning steps for the whole training process of 2500.
 
 I removed staircase.
 
