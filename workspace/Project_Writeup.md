@@ -8,6 +8,8 @@ Object Detection in an urban environment, this is a project focused on detecting
 
 I used Udacity's workspace to work in the project. You can follow the steps described in README.md. There are no Git commits nor Github repository.
 
+I could not open Explore Augmentations Jupyter Notebook.
+
 ### Dataset
 #### Dataset analysis
 
