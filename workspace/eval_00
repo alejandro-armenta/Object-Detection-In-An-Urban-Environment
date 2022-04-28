@@ -1,0 +1,83 @@
+
+EVAL 00
+
+DONE (t=0.60s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.001
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.007
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.002
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.010
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.001
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.004
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.016
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.007
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.051
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.037
+INFO:tensorflow:Eval metrics at step 2500
+I0426 01:09:00.622115 139650980316992 model_lib_v2.py:988] Eval metrics at step 2500
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP: 0.001471
+I0426 01:09:00.635297 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP: 0.001471
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP@.50IOU: 0.006933
+I0426 01:09:00.637121 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP@.50IOU: 0.006933
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP@.75IOU: 0.000068
+I0426 01:09:00.638575 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP@.75IOU: 0.000068
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (small): 0.000127
+I0426 01:09:00.639955 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (small): 0.000127
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (medium): 0.002117
+I0426 01:09:00.641371 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (medium): 0.002117
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (large): 0.010205
+I0426 01:09:00.642704 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (large): 0.010205
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@1: 0.000870
+I0426 01:09:00.644143 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@1: 0.000870
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@10: 0.004182
+I0426 01:09:00.645577 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@10: 0.004182
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100: 0.015959
+I0426 01:09:00.647243 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100: 0.015959
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (small): 0.006853
+I0426 01:09:00.649120 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (small): 0.006853
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (medium): 0.051034
+I0426 01:09:00.650834 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (medium): 0.051034
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (large): 0.036572
+I0426 01:09:00.652631 139650980316992 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (large): 0.036572
+INFO:tensorflow:	+ Loss/localization_loss: 0.799062
+I0426 01:09:00.654154 139650980316992 model_lib_v2.py:991] 	+ Loss/localization_loss: 0.799062
+INFO:tensorflow:	+ Loss/classification_loss: 1.021434
+I0426 01:09:00.655630 139650980316992 model_lib_v2.py:991] 	+ Loss/classification_loss: 1.021434
+INFO:tensorflow:	+ Loss/regularization_loss: 10.721481
+I0426 01:09:00.657137 139650980316992 model_lib_v2.py:991] 	+ Loss/regularization_loss: 10.721481
+INFO:tensorflow:	+ Loss/total_loss: 12.541978
+I0426 01:09:00.658580 139650980316992 model_lib_v2.py:991] 	+ Loss/total_loss: 12.541978
+INFO:tensorflow:Waiting for new checkpoint at experiments/reference/
+I0426 01:11:14.264513 139650980316992 checkpoint_utils.py:125] Waiting for new checkpoint at experiments/reference/
+
+
+
+
+
+
+(sdc-c1-gpu-augment) root@c2427314b439:/home/workspace# python experiments/model_main_tf2.py --model_dir= experiments/reference/ --pipeline-config_path=experiments/reference/pipeline_new.config --checkpoint_dir=experiments/reference/
+2022-04-27 14:57:20.533761: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+Traceback (most recent call last):
+  File "experiments/model_main_tf2.py", line 113, in <module>
+    tf.compat.v1.app.run()
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/tensorflow/python/platform/app.py", line 40, in run
+    _run(main=main, argv=argv, flags_parser=_parse_flags_tolerate_undef)
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "experiments/model_main_tf2.py", line 88, in main
+    wait_interval=300, timeout=FLAGS.eval_timeout)
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/object_detection/model_lib_v2.py", line 1053, in eval_continuously
+    pipeline_config_path, config_override=config_override)
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/object_detection/utils/config_util.py", line 138, in get_configs_from_pipeline_file
+    proto_str = f.read()
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/tensorflow/python/lib/io/file_io.py", line 116, in read
+    self._preread_check()
+  File "/data/virtual_envs/sdc-c1-gpu-augment/lib/python3.7/site-packages/tensorflow/python/lib/io/file_io.py", line 79, in _preread_check
+    self.__name, 1024 * 512)
+TypeError: __init__(): incompatible constructor arguments. The following argument types are supported:
+    1. tensorflow.python._pywrap_file_io.BufferedInputStream(arg0: str, arg1: int)
+
+Invoked with: None, 524288

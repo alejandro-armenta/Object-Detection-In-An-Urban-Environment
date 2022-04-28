@@ -1,0 +1,54 @@
+EVAL 01
+
+
+Accumulating evaluation results...
+DONE (t=0.62s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.002
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.008
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.000
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.005
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.015
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.001
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.005
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.024
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.006
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.080
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.106
+INFO:tensorflow:Eval metrics at step 5000
+I0427 15:27:28.641214 140671735686976 model_lib_v2.py:988] Eval metrics at step 5000
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP: 0.002331
+I0427 15:27:28.652847 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP: 0.002331
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP@.50IOU: 0.008083
+I0427 15:27:28.654653 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP@.50IOU: 0.008083
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP@.75IOU: 0.000160
+I0427 15:27:28.656335 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP@.75IOU: 0.000160
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (small): 0.000454
+I0427 15:27:28.657795 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (small): 0.000454
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (medium): 0.004679
+I0427 15:27:28.659292 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (medium): 0.004679
+INFO:tensorflow:	+ DetectionBoxes_Precision/mAP (large): 0.015077
+I0427 15:27:28.661116 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Precision/mAP (large): 0.015077
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@1: 0.000895
+I0427 15:27:28.662702 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@1: 0.000895
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@10: 0.005013
+I0427 15:27:28.664639 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@10: 0.005013
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100: 0.023855
+I0427 15:27:28.666181 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100: 0.023855
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (small): 0.005523
+I0427 15:27:28.667613 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (small): 0.005523
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (medium): 0.080015
+I0427 15:27:28.669060 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (medium): 0.080015
+INFO:tensorflow:	+ DetectionBoxes_Recall/AR@100 (large): 0.106114
+I0427 15:27:28.670586 140671735686976 model_lib_v2.py:991] 	+ DetectionBoxes_Recall/AR@100 (large): 0.106114
+INFO:tensorflow:	+ Loss/localization_loss: 0.759144
+I0427 15:27:28.671905 140671735686976 model_lib_v2.py:991] 	+ Loss/localization_loss: 0.759144
+INFO:tensorflow:	+ Loss/classification_loss: 1.076874
+I0427 15:27:28.673113 140671735686976 model_lib_v2.py:991] 	+ Loss/classification_loss: 1.076874
+INFO:tensorflow:	+ Loss/regularization_loss: 9.175787
+I0427 15:27:28.674319 140671735686976 model_lib_v2.py:991] 	+ Loss/regularization_loss: 9.175787
+INFO:tensorflow:	+ Loss/total_loss: 11.011805
+I0427 15:27:28.675500 140671735686976 model_lib_v2.py:991] 	+ Loss/total_loss: 11.011805
+
+
+RuntimeError: `merge_call` called while defining a new graph or a tf.function. This can often happen if the function `fn` passed to `strategy.run()` contains a nested `@tf.function`, and the nested `@tf.function` contains a synchronization point, such as aggregating gradients (e.g, optimizer.apply_gradients), or if the function `fn` uses a control flow statement which contains a synchronization point in the body. Such behaviors are not yet supported. Instead, please avoid nested `tf.function`s or control flow statements that may potentially cross a synchronization boundary, for example, wrap the `fn` passed to `strategy.run` or the entire `strategy.run` inside a `tf.function` or move the control flow out of `fn`
